@@ -2,6 +2,7 @@
 using LinkTic_Ecommerce.Models.Domain;
 using LinkTic_Ecommerce.Models.DTO;
 using LinkTic_Ecommerce.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace LinkTic_Ecommerce.Services.Implementations
 {
@@ -73,6 +74,18 @@ namespace LinkTic_Ecommerce.Services.Implementations
 
 
 
+        public async Task<List<PedidoDTO>> GetAllPedidosAsync()
+        {
+            // Obtener todos los pedidos de la base de datos
+            var pedidos = await _context.Pedidos.Include(p => p.DetallesPedidos)
+                                                  .ThenInclude(dp => dp.Producto) 
+                                                  .ToListAsync();
+
+      
+            var responsePedidosDTO = _mapper.Map<List<PedidoDTO>>(pedidos);
+
+            return responsePedidosDTO;
+        }
 
     }
 }

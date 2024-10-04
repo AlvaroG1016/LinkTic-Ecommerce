@@ -5,5 +5,6 @@ namespace LinkTic_Ecommerce.Services.Interfaces
     public interface IPedidoService
     {
         Task<PedidoDTO> CreatePedidoAsync(CrearPedidoDTO crearPedidoDTO);
+        Task<List<PedidoDTO>> GetAllPedidosAsync();
     }
 }
