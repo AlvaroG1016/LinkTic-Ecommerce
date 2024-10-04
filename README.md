@@ -1,5 +1,5 @@
 #LinkTic Ecommerce
-* En el archivo adjunto se encuentra un archivo con extension .sql de nombre Query Creacion Tablas. Este archivo corresponde a la creacion de las tablas necesarias para el correcto funcionamiento del sistema
+* En el zip adjunto en el correo se encuentra un archivo con extension .sql de nombre Query Creacion Tablas. Este archivo corresponde a la creacion de las tablas necesarias para el correcto funcionamiento del sistema
 * Ejecutar el query en SQLServer
 * Modificar la cadena de conexión a BD en appsettings.json
   
